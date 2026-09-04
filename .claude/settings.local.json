@@ -4,7 +4,27 @@
       "Bash(python -c ' *)",
       "Bash(pip install *)",
       "Bash(npm --version)",
-      "Bash(npx --yes create-next-app@latest . --ts --tailwind --app --no-src-dir --no-eslint --import-alias \"@/*\" --use-npm --turbopack)"
+      "Bash(npx --yes create-next-app@latest . --ts --tailwind --app --no-src-dir --no-eslint --import-alias \"@/*\" --use-npm --turbopack)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(node scripts/smoke-parse.js)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001)",
+      "Bash(curl -s -m 5 http://localhost:3000)",
+      "Bash(powershell -Command 'Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }')",
+      "Bash(curl -s -m 3 -o /dev/null -w \"After kill: %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s -m 5 -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(npx --no-install prettier --write app/page.tsx)",
+      "Bash(npx --no-install next lint --file app/page.tsx --file app/components/Uploader.tsx)",
+      "Bash(npx --no-install eslint app/page.tsx app/components/Uploader.tsx)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(git ls-remote *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git add *)"
     ]
   }
 }
