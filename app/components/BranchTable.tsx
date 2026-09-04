@@ -8,6 +8,7 @@ type Props = {
   productNames: string[];
   selected: string[];
   rankBy: "sales" | "kpi" | "units";
+  search?: string;
 };
 
 const unitSum = (b: BranchAgg) =>
@@ -18,11 +19,13 @@ export default function BranchTable({
   productNames,
   selected,
   rankBy,
+  search = "",
 }: Props) {
+  const term = search.trim().toLowerCase();
   const filtered =
-    selected.length === 0
-      ? branches
-      : branches.filter((b) => selected.includes(b.branch));
+    branches
+      .filter((b) => selected.length === 0 || selected.includes(b.branch))
+      .filter((b) => !term || b.branch.toLowerCase().includes(term));
 
   const sorted = [...filtered].sort((a, b) => {
     if (rankBy === "sales") return b.totalSale - a.totalSale;

@@ -174,6 +174,7 @@ export default function Home() {
         productNames={dataset.productNames}
         selected={selected}
         rankBy={rankBy}
+        search={search}
       />
 
       <EmployeeTable

@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo } from "react";
+
 type Props = {
   branches: string[];
   selected: string[];
@@ -53,6 +55,15 @@ export default function BranchFilter({
       onChange(branches);
     }
   };
+
+  const term = search.trim().toLowerCase();
+  const visibleBranches = useMemo(
+    () =>
+      term
+        ? branches.filter((b) => b.toLowerCase().includes(term))
+        : branches,
+    [branches, term],
+  );
 
   return (
     <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
@@ -128,7 +139,7 @@ export default function BranchFilter({
             ? "✓ All selected"
             : "Select all"}
         </button>
-        {branches.map((b) => {
+        {visibleBranches.map((b) => {
           const on = selected.includes(b);
           return (
             <button
@@ -145,6 +156,11 @@ export default function BranchFilter({
             </button>
           );
         })}
+        {visibleBranches.length === 0 && (
+          <span className="text-xs text-slate-400 italic">
+            No branches match “{search.trim()}”
+          </span>
+        )}
         <span className="ml-auto text-xs text-slate-500">
           {selected.length === 0
             ? "Showing every branch"
