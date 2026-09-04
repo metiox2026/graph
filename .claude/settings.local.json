@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(npm --version)",
+      "Bash(npx --yes create-next-app@latest . --ts --tailwind --app --no-src-dir --no-eslint --import-alias \"@/*\" --use-npm --turbopack)"
+    ]
+  }
+}
