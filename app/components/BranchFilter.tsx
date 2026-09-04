@@ -57,7 +57,7 @@ export default function BranchFilter({
   return (
     <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-b border-slate-200">
-        <div className="flex items-center gap-4 text-sm">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
           <label className="flex items-center gap-2 text-slate-700">
             <input
               type="checkbox"
@@ -88,7 +88,7 @@ export default function BranchFilter({
               value={search}
               onChange={(e) => onSearch(e.target.value)}
               placeholder="Search employee, branch…"
-              className="w-64 rounded-md border border-slate-300 bg-white px-3 py-1 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:outline-none"
+              className="w-full sm:w-64 rounded-md border border-slate-300 bg-white px-3 py-1 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:outline-none"
             />
           </div>
         </div>
